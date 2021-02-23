@@ -1,0 +1,15 @@
+matriks = [[1, 2, 3],[4, 5, 6],[7, 8, 9],[10, 11, 12]]
+
+def cari_rata2(matriks):
+    nilai_mean = None
+    for nilai1 in matriks:
+        for nilai2 in nilai1:
+            if not nilai_mean:
+                nilai_mean = nilai2
+            elif nilai2 + nilai_mean:
+                nilai_mean += nilai2
+    return nilai_mean
+
+print("\n".join(map(str, matriks)))
+print("Nilai rata-rata")
+print(cari_rata2(matriks))
