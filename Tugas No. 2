@@ -1,0 +1,18 @@
+print("rumus segitiga phytagoras adalah a2 + b2 = c2")
+print("\n")
+
+sisi_a = int(input("masukan nilai sisi a : "))
+sisi_b = int(input("masukan nilai sisi b : "))
+sisi_c = int(input("masukan nilai sisi c : "))
+
+x = sisi_c ** 2
+y = sisi_a ** 2 + sisi_b ** 2
+
+if (x == y):
+    print(x, "=", y)
+    print("segitiga adalah triple phytagoras")
+elif (sisi_a and sisi_b and sisi_c <= 0):
+    print("Nilai tidak bisa minus atau 0")
+else:
+    print(x, "!=", y)
+    print("Bukan Triple Phytagoras")
