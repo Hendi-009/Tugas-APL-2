@@ -1,0 +1,10 @@
+baris = 6
+for i in range(1, baris):
+    for j in range(1, baris + 0):
+        if i == j:
+            print("0", end=" ")
+        elif i <= j:
+            print("9", end=" ")
+        else:
+            print("6", end=" ")
+    print()
