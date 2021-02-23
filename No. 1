@@ -1,0 +1,36 @@
+matriks = [[5, 4, 3],[2, 6, 8]]
+
+def cari_min(matriks):
+    nilai_min = None
+    for nilai1 in matriks:
+        for nilai2 in nilai1:
+            if not nilai_min:
+                nilai_min = nilai2
+            elif nilai2 < nilai_min:
+                nilai_min = nilai2
+    return nilai_min
+
+def cari_max(matriks):
+    nilai_max = None
+    for nilai1 in matriks:
+        for nilai2 in nilai1:
+            if not nilai_max:
+                nilai_max = nilai2
+            elif nilai2 > nilai_max:
+                nilai_max = nilai2
+    return nilai_max
+
+def cari_rata2(matriks):
+    nilai_mean = None
+    for nilai1 in matriks:
+        for nilai2 in nilai1:
+            if not nilai_mean:
+                nilai_mean = nilai2
+            elif nilai2 - nilai_mean:
+                nilai_mean += nilai2
+    return nilai_mean/6
+
+print("\n".join(map(str, matriks)))
+print(cari_min(matriks))
+print(cari_max(matriks))
+print(cari_rata2(matriks))
