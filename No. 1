@@ -1,4 +1,9 @@
-matriks = [[5, 4, 3],[2, 6, 8]]
+import random
+
+def randoms(baris, colom, nilai_min=1, nilai_max=100):
+    return [
+        [random.randint(nilai_min, nilai_max) for j in range(colom)]
+        for i in range(baris)]
 
 def cari_min(matriks):
     nilai_min = None
@@ -10,6 +15,7 @@ def cari_min(matriks):
                 nilai_min = nilai2
     return nilai_min
 
+
 def cari_max(matriks):
     nilai_max = None
     for nilai1 in matriks:
@@ -20,17 +26,23 @@ def cari_max(matriks):
                 nilai_max = nilai2
     return nilai_max
 
+
 def cari_rata2(matriks):
     nilai_mean = None
     for nilai1 in matriks:
         for nilai2 in nilai1:
             if not nilai_mean:
                 nilai_mean = nilai2
-            elif nilai2 - nilai_mean:
+            elif nilai2 + nilai_mean:
                 nilai_mean += nilai2
-    return nilai_mean/6
+    return nilai_mean / (baris*kolom)
+
+baris = int(input("Masukkan jumlah baris: "))
+kolom = int(input("Masukkan jumlah kolom: "))
+random.randint(0, 0)
+matriks = randoms(baris, kolom)
 
 print("\n".join(map(str, matriks)))
-print(cari_min(matriks))
-print(cari_max(matriks))
-print(cari_rata2(matriks))
+print("Nilai minimum matriks: ", cari_min(matriks))
+print("Nilai maximum matriks: ", cari_max(matriks))
+print("Nilai rata-rata matriks: ", cari_rata2(matriks))
