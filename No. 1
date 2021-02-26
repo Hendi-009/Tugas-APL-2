@@ -2,10 +2,9 @@ baris = int(input("Masukkan jumlah baris: "))
 kolom = int(input("Masukkan jumlah kolom: "))
 
 matriks = []
-for i in range(0, kolom):
-    matriks.append([])
 
 for i in range(0, baris):
+    matriks.append([])
     for j in range(0, kolom):
         matriks[i].append(j)
         matriks[i][j] = 0
@@ -13,7 +12,6 @@ for i in range(0, baris):
 for i in range(0, baris):
     for j in range(0,kolom):
         matriks[i][j] = int(input("Masukkan nilai: "))
-        avg = matriks
 
 def cari_min(matriks):
     nilai_min = None
