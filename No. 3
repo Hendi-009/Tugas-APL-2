@@ -1,24 +1,24 @@
-import random
+baris = int(input("Masukkan jumlah baris: "))
+kolom = int(input("Masukkan jumlah kolom: "))
 
-def randoms(baris, colom, nilai_min=1, nilai_max=100):
-    return [
-        [random.randint(nilai_min, nilai_max) for j in range(colom)]
-        for i in range(baris)]
+matriks = []
+
+for i in range(0, baris):
+    matriks.append([])
+    for j in range(0, kolom):
+        matriks[i].append(j)
+        matriks[i][j] = int(input("Masukkan nilai: "))
 
 def cari_rata2(matriks):
     nilai_mean = None
-    for nilai1 in matriks:
-        for nilai2 in nilai1:
+    for nilaii in matriks:
+        for nilaij in nilaii:
             if not nilai_mean:
-                nilai_mean = nilai2
-            elif nilai2 + nilai_mean:
-                nilai_mean += nilai2
+                nilai_mean = nilaij
+            elif nilaij + nilai_mean:
+                nilai_mean += nilaij
     return nilai_mean / (baris*kolom)
 
-baris = int(input("Masukkan jumlah baris: "))
-kolom = int(input("Masukkan jumlah kolom: "))
-random.randint(0, 0)
-matriks = randoms(baris, kolom)
-
 print("\n".join(map(str, matriks)))
-print("Nilai rata-rata: ", cari_rata2(matriks))
+
+print("Nilai rata-rata matriks: ", cari_rata2(matriks))
